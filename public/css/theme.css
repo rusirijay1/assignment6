@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Font+Name&display=swap');
+
+/* Navigation Bar */
+.navbar {
+  background: linear-gradient(to right, #98cee9, #4c81c2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+  font-family: 'Font Name', Lucida Sans Regular;
+  color: #fff;
+  text-shadow: 4px 4px 4px #aaa;
+  -webkit-text-stroke: 2px #000;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+  font-family: 'Font Name', fantasy;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #ffd700;
+}
+
+/* App Background */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+body {
+  background: linear-gradient(to bottom, #aca6de, #e2e1ed);
+}
+
+/* "Primary" Button */
+.btn-primary {
+  background-color: #0055ff;
+  background-image: linear-gradient(to bottom, #00aaff, #0055ff);
+  box-shadow: 0 2px 4px #3189a6;
+}
+
+.btn-primary:hover {
+  background-color: #7a0cef;
+  box-shadow: 0 2px 4px #48aec2;
+}
+
+/* Table cells inside "odd" numbered table rows */
+table tr:nth-child(odd) td {
+  background-color: #f0f0f0;
+  background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
+}
+
+/* All "Heading" elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Font Name', sans-serif;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* All "Anchor" elements (HTML Links) */
+a {
+  color: #0055ff;
+}
+
+a:hover {
+  color: #042f33;
+}
+
+/* Fieldset "Legends" */
+legend {
+  padding: 5px 10px;
+  font-family: 'Font Name', sans-serif;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
