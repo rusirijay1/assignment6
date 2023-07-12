@@ -15,9 +15,6 @@ var app = express();
 var path = require('path');
 var collegeData = require('./modules/collegedata.js');
 
-// Set the views directory
-app.set('views', path.join(__dirname, 'views'));
-
 
 // Set the public directory as a source for static files
 app.use(express.static(path.join(__dirname)));
