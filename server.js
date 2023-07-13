@@ -22,6 +22,9 @@ app.use(express.static(path.join(__dirname)));
 // for POST request
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.json());
+
+
 
 /**********************Routes to return data ***************/
 // GET /students route
