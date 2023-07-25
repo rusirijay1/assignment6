@@ -96,6 +96,23 @@ function getCourses() {
   });
 }
 
+function getCourseById(id) {
+  return new Promise((resolve, reject) => {
+    if (!dataCollection || !dataCollection.courses) {
+      reject("No course data available");
+      return;
+    }
+
+    var course = dataCollection.courses.find(course => course.courseId === id);
+    if (course) {
+      resolve(course);
+    } else {
+      reject("No results returned for course per id");
+    }
+  });
+}
+
+
 /**
  * Function getStudentsByCourse
  * @param {
@@ -130,6 +147,29 @@ function getStudentByNum(num) {
   });
 }
 
+function updateStudent(studentData) {
+  return new Promise((resolve, reject) => {
+    if (!dataCollection || !dataCollection.students) {
+      reject("No student data available");
+      return;
+    }
+
+    const index = dataCollection.students.findIndex((student) => student.studentNum === studentData.studentNum);
+
+    if (index !== -1) {
+      // Overwrite the existing student with the new data
+      dataCollection.students[index] = studentData;
+
+      // Handle the "TA" checkbox data
+      dataCollection.students[index].TA = !!studentData.TA; // Convert to boolean
+
+      resolve();
+    } else {
+      reject("Student not found");
+    }
+  });
+}
+
 function addStudent(studentData) {
   return new Promise((resolve, reject) => {
     if (!studentData.TA) {
@@ -152,5 +192,7 @@ module.exports = {
   getTAs,
   getStudentsByCourse,
   getStudentByNum,
-  addStudent
+  addStudent,
+  getCourseById,
+  updateStudent
 };
