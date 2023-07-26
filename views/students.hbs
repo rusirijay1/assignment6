@@ -17,7 +17,7 @@
         {{#each students}}
         <tr>
           <td>{{studentNum}}</td>
-          <td>{{firstName}} {{lastName}}</td>
+           <td><a href="/student/{{studentNum}}">{{firstName}} {{lastName}}</a></td>
           <td><a href="mailto:{{email}}">{{email}}</a></td>
           <td>{{addressStreet}}, {{addressCity}}, {{addressProvince}}</td>
           <td>{{status}}</td>

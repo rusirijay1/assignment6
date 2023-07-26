@@ -138,8 +138,8 @@ function getStudentsByCourse(course) {
  */
 function getStudentByNum(num) {
   return new Promise((resolve, reject) => {
-    var foundStudent = dataCollection.students.filter((studentByNum) => studentByNum.studentNum == num);
-    if (foundStudent.length > 0) {
+    var foundStudent = dataCollection.students.find((studentByNum) => studentByNum.studentNum === num);
+    if (foundStudent) {
       resolve(foundStudent);
     } else {
       reject("No results returned");
@@ -154,8 +154,10 @@ function updateStudent(studentData) {
       return;
     }
 
-    const index = dataCollection.students.findIndex((student) => student.studentNum === studentData.studentNum);
-
+    const index = dataCollection.students.findIndex(
+      (student) => student.studentNum === parseInt(studentData.studentNum)
+    );
+    
     if (index !== -1) {
       // Overwrite the existing student with the new data
       dataCollection.students[index] = studentData;

@@ -142,7 +142,7 @@ app.get('/course/:id', (req, res) => {
 
 // GET /student/:num route
 app.get('/student/:num', (req, res) => {
-  const num = req.params.num;
+  const num = parseInt(req.params.num);
 
   collegeData.getStudentByNum(num)
     .then((data) => {
