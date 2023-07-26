@@ -16,20 +16,41 @@
 			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">{{#navLink "/"}}Home{{/navLink}}</li>
-					<li class="nav-item">{{#navLink "/about"}}About{{/navLink}}</li>
-					<li class="nav-item">{{#navLink "/htmlDemo"}}Html Demo{{/navLink}}</li>
-					<li class="nav-item">{{#navLink "/students/add"}}Add Student{{/navLink}}</li>
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+					<li class="nav-item"><a class="nav-link" href="/students/add">Add Student</a></li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">{{#navLink "/students"}}Students{{/navLink}}</li>
-					<li class="nav-item">{{#navLink "/courses"}}Courses{{/navLink}}</li>
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
 				</ul>
 			</div>
 		</nav>
 
 		<div class="container">
-			{{{body}}}
+			<div class="row">
+				<main class="col-md-12">
+
+					<!-- Start your code here -->
+					
+					<h1>Welcome to the About page!</h1>
+  
+                    <h2>About Me</h2><br><br>
+                    <p>My name is Rusiri Jayalath and I am a student in the Business Information Technology program at Seneca College, Markham. I am 
+						a software engineer and I have 5 years of experience on my field and I am interested to learn more and expand my knowledge.
+					</p>
+                    <p>Student ID: 134442227</p>
+                    <p>In this website, I aim to showcase my skills and knowledge in HTML5, routing in Express, and other related principles and techniques.</p>
+
+					
+					<!-- End your code here  -->
+
+
+
+				</main>
+			</div>
 		</div>
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
