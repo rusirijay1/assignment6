@@ -4,12 +4,17 @@
     <h2>Courses</h2>
     <hr />
 
+    <!-- Add New Course button -->
+    <div class="col-md-12 text-center">
+      <a href="/courses/add" class="btn btn-success float-right">Add New Course</a>
+    </div>
     <div class="table-responsive">
       <table class="table">
         <thead>
           <tr>
             <th>Course Code</th>
             <th>Course Description</th>
+            <th></th> <!-- Empty header for the "remove" column -->
           </tr>
         </thead>
         <tbody>
@@ -17,6 +22,7 @@
           <tr>
             <td><a href="/course/{{courseId}}">{{courseCode}}</a></td>
             <td><a href="/students?course={{courseId}}">{{courseDescription}}</a></td>
+            <td><a href="/course/delete/{{courseId}}" class="btn btn-danger">Remove</a></td>
           </tr>
           {{/each}}
         </tbody>
@@ -24,6 +30,7 @@
     </div>
   </div>
 </div>
+
 
 {{#unless courses}}
 <div class="col-md-12 text-center">
