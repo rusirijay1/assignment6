@@ -135,22 +135,25 @@ app.get("/courses", (req, res) => {
 
 
 // GET /student/num route
-app.get("/student/:studentNum", (req, res) => {
+app.get("/student/:stdNum", (req, res) => {
   // Initialize an empty object to store the values
   let viewData = {};
 
-  collegeData.getStudentByNum(req.params.studentNum)
-    .then((studentData) => {
-      if (studentData) {
-        viewData.student = studentData; 
+  collegeData.getStudentByNum(req.params.stdNum)
+    .then((stdData) => {
+      if (stdData) {
+        viewData.student = stdData; 
       } else {
         viewData.student = null; // Set student to null if none were returned
       }
+
+      // Return stdData to pass it to the next .then() block
+      return stdData;
     })
     .catch(() => {
       viewData.student = null; // Set student to null if there was an error
     })
-    .then(data.getCourses)
+    .then((stdData) => collegeData.getCourses(stdData.course)) // Use stdData here
     .then((courseData) => {
       viewData.courses = courseData; // Store course data in the "viewData" object as "courses"
 
@@ -175,6 +178,7 @@ app.get("/student/:studentNum", (req, res) => {
       }
     });
 });
+
 
 // GET route to delete a student
 app.get("/student/delete/:studentNum", (req, res) => {
